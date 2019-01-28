@@ -10,40 +10,40 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class GooglePage {
+public class TestPage {
 
-    private static String GOOGLE_URL = "https://www.google.com/";
+    private static String AUTOMATIONPRACTICE_URL = "http://automationpractice.com/index.php";
     private WebDriver driver;
 
-    @FindBy(how = How.NAME, using = "q")
-    private WebElement searchField;
+    @FindBy(how = How.NAME, using = "search_query")
+    public WebElement searchField;
 
-    @FindBy(how = How.ID, using = "rcnt")
+    /*@FindBy(how = How.ID, using = "rcnt")
     private WebElement resultsWebPart;
 
     @FindBy(how = How.XPATH, using = "//shopping_cart")
     private WebElement Cart;
+*/
 
+    @FindBy (how = How.CLASS_NAME, using = "login")
+    public WebElement signInButton;
 
-    @FindBy (how = How.CLASS_NAME, using = "LC20lb")
-    public WebElement firstSearchResult;
-
-    public GooglePage(final WebDriver driver) {
+    public TestPage(final WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public void openGooglePage() {
-        driver.get(GOOGLE_URL);
+    public void openAutomationPage() {
+        driver.get(AUTOMATIONPRACTICE_URL);
     }
 
-    public void searchInGoogle(String searchPhrase) {
+    public void searchInAutomationpractice(String searchPhrase) {
         searchField.sendKeys(searchPhrase);
         searchField.sendKeys(Keys.ENTER);
     }
 
-    public void verifyIfResultsAreVisible() throws InterruptedException {
+    /*public void verifyIfResultsAreVisible() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(resultsWebPart));
-    }
+    }*/
 }
