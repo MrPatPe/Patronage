@@ -18,12 +18,7 @@ public class TestPage {
     @FindBy(how = How.NAME, using = "search_query")
     public WebElement searchField;
 
-    /*@FindBy(how = How.ID, using = "rcnt")
-    private WebElement resultsWebPart;
 
-    @FindBy(how = How.XPATH, using = "//shopping_cart")
-    private WebElement Cart;
-*/
 
     @FindBy (how = How.CLASS_NAME, using = "login")
     public WebElement signInButton;
@@ -42,8 +37,5 @@ public class TestPage {
         searchField.sendKeys(Keys.ENTER);
     }
 
-    /*public void verifyIfResultsAreVisible() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOf(resultsWebPart));
-    }*/
+
 }

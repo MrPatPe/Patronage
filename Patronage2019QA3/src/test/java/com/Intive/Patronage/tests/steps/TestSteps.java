@@ -21,12 +21,7 @@ public class TestSteps extends DriverFactory {
     public void iSearchAutomationpracticeWithPhrase(String searchPhrase){
         AutomationPage.searchInAutomationpractice(searchPhrase);
     }
-/*
-    @Then("^I can see results$")
-    public void iCanSeeResults() throws Throwable {
-        AutomationPage.verifyIfResultsAreVisible();
-    }
-*/
+
     @Then("^I am on Automationpractice sign in page$")
     public void iAmOnAutomationsigninpage()  {
         String actualURL = driver.getCurrentUrl();
